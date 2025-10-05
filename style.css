@@ -48,6 +48,9 @@ nav ul{
     margin-top: 20vh;
     color: white;
 }
+#click,
+label{
+    display:none;
 .home h1{
     font-size: 1.2em;
     font-weight: bold;
@@ -463,6 +466,23 @@ fieldset div del{
             position: relative;
             top: 25px;
           }
+    @media (max-width:500px){
+        nav{
+            position:absolute;
+            left:-35vh;
+            top:50px;
+        }
+             label{
+            display:flex;
+        }
+        #click:checked~nav{
+            left:0;
+        }
+        header{
+            width:100%;
+            
+    }
+    
 
 
 
@@ -473,6 +493,7 @@ fieldset div del{
   
 
   
+
 
 
 
