@@ -9,6 +9,9 @@ img{
     width: 100%;
     object-fit: cover;
 }
+li,button{
+    cursor:pointer;
+}
 .cafe{
     height: 100vh;
     background: url(./cafe\ image1.avif);
@@ -84,10 +87,12 @@ label{
 nav ul li:nth-child(1){
     color: orange;
 }
-nav ul li:nth-child(6){
-    border:1px solid;
+nav ul li button{
+    border:1px solid white;
     padding: 10px;
     border-radius: 20px;
+    background:transparent;
+    color:white;
 }
 nav ul:hover{
     color: orange;
@@ -167,9 +172,8 @@ i{
     font-size: 3em;
 }
 .meet-people{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+     display: grid;
+   grid-template-columns: repeat(4,1fr);
     gap: 20px;
     margin-top: 40px;
 }
@@ -451,39 +455,83 @@ fieldset div del{
     }
     .contact footer{
         margin-top: 30px;
-        position: absolute;
     }
-    .contact footer table tr{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: row;
+.contact footer table tr{
+         display: grid;
+         grid-template-columns: repeat(3,1fr);
         gap: 30vh;
     }
-    footer tr .link{
-          line-height:40px ;
-          }
-    footer tr .hours{
-            position: relative;
-            top: 25px;
-          }
-    @media (max-width:500px){
-        nav{
-            position:absolute;
-            left:-35vh;
-            top:50px;
+  @media (max-width:1200px){
+        .meet-people{
+            grid-template-columns: repeat(3,1fr);
         }
-             label{
-            display:flex;
+        .timeline .customer-two{
+            margin-left: 0;
         }
-        #click:checked~nav{
-            left:0;
-        }
-        header{
-            width:100%;
-        }
-            
     }
+    @media (max-width:992px){
+        nav{
+            position: absolute;
+            left: -93vh;
+            top: 100%;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            margin-top: 10px;
+            width: 200px;
+            border-radius: 20px;
+            transition: left 1s ease;
+            z-index: 1000;
+        }
+        nav ul{
+            flex-direction: column;
+            gap: 30px !important;
+        }
+        label{
+            display: flex;
+        }
+         #click:checked~nav{
+            left: 0;
+        }
+        .about{
+            height: fit-content;
+            padding: 10px;
+        }
+        .about .barista{
+            flex-direction: column;
+
+        }
+        .meet-people{
+            grid-template-columns: repeat(2,1fr);
+        }
+          .cafe section .card{
+            transform: translate(-50%, -50%) rotate(0deg);
+            width: 300px;
+            height: 350px;
+            top: 40%;
+            left: 50%;
+            
+        }
+        .menu-card{
+            height: fit-content;
+        }
+        .menu-card fieldset{
+            height: fit-content;
+        }
+         .menu-card form{
+            flex-direction: column;
+        }
+    }
+    
+           @media (max-width:576px){
+        
+        .about .barista .img-container img{
+            width: 360px;
+        }
+        .meet-people{
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+    
     
 
 
@@ -495,6 +543,7 @@ fieldset div del{
   
 
   
+
 
 
 
